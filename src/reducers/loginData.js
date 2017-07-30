@@ -7,8 +7,8 @@ const initialState = {
     isSignup: false
 }
 
-function authenticate(username, password) {
-    return true;
+function authenticate({ username, password }, users) {
+    return users.some(u => u.username === username && u.password === password);
 }
 
 export default function loginData(state=initialState, { type, ...args }) {
