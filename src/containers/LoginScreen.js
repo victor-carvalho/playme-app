@@ -75,14 +75,14 @@ class LoginScreen extends Component {
                         {isSignup
                             ? <SignupForm onSignup={this.onSignup} />
                             : <LoginForm onLogin={this.onLogin} />}
+                        <TouchableOpacity onPress={this.changeForm}>
+                            <View style={styles.changeForm}>
+                                <Text style={styles.changeFormText}>
+                                    {isSignup ? 'Cancel' : 'Sign Up'}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
                     </KeyboardAvoidingView>
-                    <TouchableOpacity onPress={this.changeForm}>
-                        <View style={styles.changeForm}>
-                            <Text style={styles.changeFormText}>
-                                {isSignup ? 'Cancel' : 'Sign Up'}
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
                 </LinearGradient>
             </View>
         );
