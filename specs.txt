@@ -1,0 +1,61 @@
+State:
+    loginStatus:
+        logged: bool
+        failed: bool
+        users: [
+            { login: string, pass: string }
+        ]
+    player:
+        currentAlbum: id
+        curentTrack: id
+        trackPosition: int
+        volume: int
+    bands: [
+        {
+            id: number
+            albums: [ ids ]
+        }
+    ],
+    albums: [
+        { 
+            id: number
+            title: string
+            duration: number
+            tracks: [
+                { id: number, title: string, duration: number }
+            ]
+        }
+    ],
+    playlist: {
+        title: string
+        duration: number
+        albums: [ ids ]
+    }
+
+Components:
+    LoginScreen
+        LoginHeader
+        AnimatedBox (componente implementando a rotação dos forms de login e signup)
+            LoginForm
+            SignUpForm
+        TransitionButton (vai disparar a animação e trocar os forms no click)
+    HomeScreen (drawer navigator com componente de TopAlbums)
+        TopAlbums
+            BigAlbumCard
+        Bands
+            FlatList
+                BandCard
+        Albums
+            FlatList
+                AlbumCard
+        Playlists
+            PlaylistsHeader
+            FlatList
+                AlbumCard
+        BandDetails
+        Player
+            TrackDurationSlider
+            RateLevel
+            PlayerActions
+            VolumeSlider
+    
